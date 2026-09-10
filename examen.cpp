@@ -120,11 +120,11 @@ void registrarEstudiantes(string Estudiante[], double Nota[], int &contador) {
     }
 
     cout << "Estudiantes registrados con éxito." << endl;
-}
+}// tiene un error en consola.. ingresando 5 o mas estudiantes la consola se vuelve loca
 
 void mostrarReporte(string Estudiante[], double Nota[], int contador) {
 
-    // 1. Listado numerado con estado
+    
     cout << "\n===== REPORTE GENERAL =====" << endl;
     for (int i = 0; i < contador; i++) {
         cout << (i + 1) << ". " << Estudiante[i] << " - Nota: " << Nota[i];
@@ -135,14 +135,14 @@ void mostrarReporte(string Estudiante[], double Nota[], int contador) {
         }
     }
 
-    // 2. Inicializar acumuladores con el primer estudiante
+   
     double sumaNotas = Nota[0];
     int indiceMayor = 0;
     int indiceMenor = 0;
     int aprobados = (Nota[0] >= 14) ? 1 : 0;
     int reprobados = (Nota[0] >= 14) ? 0 : 1;
 
-    // 3. Recorrer desde el segundo estudiante en adelante
+   
     for (int i = 1; i < contador; i++) {
         sumaNotas += Nota[i];
 
@@ -162,7 +162,7 @@ void mostrarReporte(string Estudiante[], double Nota[], int contador) {
 
     double promedio = sumaNotas / contador;
 
-    // 4. Mostrar resultados finales
+   
     cout << "\nPromedio general: " << promedio << endl;
     cout << "Estudiante con nota mayor: " << Estudiante[indiceMayor] << " (" << Nota[indiceMayor] << ")" << endl;
     cout << "Estudiante con nota menor: " << Estudiante[indiceMenor] << " (" << Nota[indiceMenor] << ")" << endl;
@@ -176,12 +176,12 @@ void buscarEstudiante(string Estudiante[], double Nota[], int contador) {
     cout << "Ingrese el nombre del estudiante a buscar: ";
     cin >> nombreBuscado;
 
-    int indiceEncontrado = -1; // -1 significa "todavía no encontrado"
+    int indiceEncontrado = -1; 
 
     for (int i = 0; i < contador; i++) {
         if (Estudiante[i] == nombreBuscado) {
             indiceEncontrado = i;
-            break; // ya lo encontré, no sigo recorriendo
+            break; 
         }
     }
 
